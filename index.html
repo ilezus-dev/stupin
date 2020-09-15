@@ -10,8 +10,15 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
+<script type="text/javascript">
+  window.onload = function () {
+    setTimeout(function () {
+      document.getElementById("root").classList.remove("hide")
+    }, 300)
+  }
+</script>
 <body>
-  <div id="root">
+  <div id="root" class="hide">
     <div class="background">
       <img src="assets/icons/background.svg"/>
     </div>

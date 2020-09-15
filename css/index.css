@@ -1,5 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 html {
   font-family: "Circular Std";
+}
+
+.hide {
+  opacity: 0;
 }
 
 * {
@@ -39,6 +50,9 @@ body {
   height: 100%;
   overflow: auto;
   scrollbar-width: none;
+  -webkit-transition: 300ms opacity ease-out;
+  -o-transition: 300ms opacity ease-out;
+  transition: 300ms opacity ease-out;
 }
 
 #root::-webkit-scrollbar {
