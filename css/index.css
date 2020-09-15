@@ -1,0 +1,249 @@
+html {
+  font-family: "Circular Std";
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body {
+  background: #000000;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.background img {
+  height: 108%;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.title-wrapper {
+  margin-top: 80px;
+}
+
+.title-wrapper .title {
+  font-size: 100px;
+  line-height: 126px;
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.blue {
+  color: #1E57D6;
+}
+
+.title .transparent {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+.title-description {
+  position: relative;
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.title-description::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  left: -125px;
+  top: -90px;
+  background: no-repeat url("../assets/icons/square-icon.svg") 50% 50% / 100%;
+}
+
+main {
+  margin-top: 40px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 90%;
+}
+
+.list .title {
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.list .item {
+  position: relative;
+  padding-left: 30px;
+  font-size: 17px;
+  line-height: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.list .item::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  left: 0;
+  background: url("../assets/icons/ellipse.svg");
+}
+
+footer {
+  margin-top: 80px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+quote {
+  border-left: 1px solid #1E57D6;
+  padding-left: 10px;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.see {
+  background: #141414;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 30px;
+  padding: 17px 30px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .title-description {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  footer quote {
+    display: none;
+  }
+
+  footer {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .title-wrapper .title {
+    font-size: 80px;
+    line-height: 106px;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .title-wrapper .title {
+    font-size: 60px;
+    line-height: 86px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .title-wrapper .title {
+    font-size: 30px;
+    line-height: 55px;
+  }
+
+  .background {
+    display: none;
+  }
+
+  .title-wrapper {
+    margin-top: 50px;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  footer {
+    margin-top: 40px;
+  }
+
+  .list .title {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 20px
+  }
+
+  .list .item {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 15px;
+  }
+}
