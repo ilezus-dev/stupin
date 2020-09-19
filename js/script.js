@@ -63,7 +63,7 @@ function mouseWheelHandle (event) {
 	}
 }
 
-window.addEventListener("resize", setCoefficient())
+setCoefficient()
 
 if (window.innerWidth > 990) {
 	var instance = new fullpage("#fullpage", {

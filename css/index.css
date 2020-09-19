@@ -363,6 +363,10 @@ div#section4 .form-wrapper button {
 }
 
 @media only screen and (max-width: 900px) {
+  .card-list:not(:first-child) {
+    margin-top: calc(60px * var(--coefficient-2));
+  }
+  
   main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
