@@ -9,7 +9,7 @@ if (history.scrollRestoration) {
 }
 
 var timeout
-var delay = 901
+var delay = 1001
 var fullpageElement = document.getElementById("fullpage")
 var sectionElement = document.getElementById("section4")
 
@@ -71,6 +71,14 @@ if (window.innerWidth > 990) {
 		easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
 		scrollingSpeed: delay,
 		onLeave: function (section, destination, direction) {
+			if (!destination.isLast) {
+				if (direction === "down") {
+					section.item.classList.add("translate")
+				} else {
+					destination.item.classList.remove("translate")
+				}
+			}
+			
 			clearTimeout(timeout)
 			timeout = setTimeout(function () {
 				window.fullpageSlide = destination.index
