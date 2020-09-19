@@ -9,88 +9,210 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/fullpage.css">
+  <script type="text/javascript" src="js/fullpage.js"></script>
+  <script type="text/javascript" src="js/script.js" async></script>
 </head>
-<script type="text/javascript">
-  window.onload = function () {
-    setTimeout(function () {
-      document.getElementById("root").classList.remove("hide")
-    }, 300)
-  }
-</script>
-<body>
-  <div id="root" class="hide">
-    <div class="background">
-      <img src="assets/icons/background.svg"/>
-    </div>
+<body class="hide">
+  <div class="background first over">
+    <img src="assets/icons/background.svg"/>
+  </div>
 
+  <header>
     <div class="container">
-      <header>
-        <img src="assets/icons/logo.svg" alt="Stupin IT">
-      </header>
+      <img src="assets/icons/logo.svg" alt="Stupin IT">
+      <quote>
+        Manage your IT-business <span class="blue">independence</span> so that nobody can slow you down
+      </quote>
+    </div>
+  </header>
 
-      <div class="flex title-wrapper">
-        <div class="title">
-          <span class="default">I’m</span>
+  <div id="fullpage">
+
+    <div class="section" id="section0">
+      <div class="container">
+        <div class="main-title">
+          <span class="default">I am</span>
           <span class="blue">Mikhail</span>
           <span class="transparent">Stupin</span>
         </div>
-        <div class="title-description">
-          Powerful product <br/>
-          development teams creation
+
+        <div class="main-description">
+          I build the best in class product development teams for and with you. 
+        </div>
+
+        <main class="flex">
+          <div class="list">
+            <div class="title blue">My specialty</div>
+            <div class="content">
+              <div class="item">Building IT teams</div>
+              <div class="item">Global platform thinking</div>
+              <div class="item">Elegant solutions for complex cases</div>
+            </div>
+          </div>
+
+          <div class="list">
+            <div class="title hide">My specialty</div>
+            <div class="content">
+              <div class="item">Launching Projects</div>
+              <div class="item">Proven anti-crisis strategies</div>
+              <div class="item">Efficient competence centers and control systems</div>
+            </div>
+          </div>
+        </main>
+
+        <div class="mouse">
+          <div class="content">Scroll down to learn more</div>
         </div>
       </div>
-
-      <main class="flex">
-        <div class="list">
-          <div class="title">Management</div>
-          <div class="content">
-            <div class="item">Inhouse cooperation / IT consulting</div>
-            <div class="item">Complex approach</div>
-            <div class="item">Anti-crisis solutions</div>
-            <div class="item">Hard-case managment</div>
-            <div class="item">Fast MVP launching</div>
-            <div class="item">Transparent leadership</div>
-            <div class="item">High speed team building</div>
-            <div class="item">Talent development</div>
-            <div class="item">Inhouse bp design and automation</div>
-          </div>
-        </div>
-
-        <div class="list">
-          <div class="title">Product</div>
-          <div class="content">
-            <div class="item">Digital product development</div>
-            <div class="item">Product management</div>
-            <div class="item">Customer development</div>
-            <div class="item">Cross-team communications</div>
-            <div class="item">KPI & Metrics</div>
-            <div class="item">Product design factory</div>
-          </div>
-        </div>
-
-        <div class="list">
-          <div class="title">Development</div>
-          <div class="content">
-            <div class="item">Fundamental software engeneering</div>
-            <div class="item">Business & System analysis</div>
-            <div class="item">Math model & Algorithm</div>
-            <div class="item">Software architecture design</div>
-            <div class="item">Server infrastructure design</div>
-            <div class="item">QA functional & automation</div>
-            <div class="item">Audit and refactoring</div>
-          </div>
-        </div>
-      </main>
-
-      <footer class="flex">
-        <quote>
-          You will be able to manage your IT-business with <span class="blue">independence</span> and nobody can slow you. Thats all.
-        </quote>
-        <div class="see">
-          👋 See you at October 2020
-        </div>
-      </footer>
     </div>
+
+    <div class="section" id="section1">
+      <div class="container">
+        <div class="main-title">
+          Management
+        </div>
+
+        <main class="flex">
+          <div class="card-list">
+            <div class="card">
+              <div class="title">In-house work and IT consulting</div>
+              <div class="description">We’re as flexible as IT teams get. Ready to work both in-house and on a project basis</div>
+            </div>
+            <div class="card">
+              <div class="title">Anti-crisis solutions and managment of complicated cases</div>
+              <div class="description">If you have lost control of the situation, I will help you develop a strategy to restore it and strengthen your position</div>
+            </div>
+
+            <div class="card">
+              <div class="title">Building teams and talent development plans</div>
+              <div class="description">I can rapidly assemble a core team for you minimizing the risk of wasting time and money. Your employees will love their job and grow quickly</div>
+            </div>
+          </div>
+
+          <div class="card-list">
+            <div class="card">
+              <div class="title">Fast MVP launches</div>
+              <div class="description">Develop an MVP at lightning speed to allow you to win a market niche in time </div>
+            </div>
+            <div class="card">
+              <div class="title">Building transparent processes within your team</div>
+              <div class="description">With the right approach, you can assemble a result-oriented team driven by leadership ideology </div>
+            </div>
+
+            <div class="card">
+              <div class="title">In-house business processes automation</div>
+              <div class="description">We will design and automate scalable business processes, and implement solutions for their management and control</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="section" id="section2">
+      <div class="container">
+        <div class="main-title">
+          Development
+        </div>
+
+        <main class="flex">
+          <div class="card-list">
+            <div class="card">
+              <div class="title">Fundamental software engeneering</div>
+              <div class="description">The highest level of coding combined with math allows us to lay a powerful foundation for future software development</div>
+            </div>
+            <div class="card">
+              <div class="title">Business & System analysis </div>
+              <div class="description">Allows to define the goals both at the business and system level to significantly speed up the development process and reduce risks by the time the system starts scaling</div>
+            </div>
+
+            <div class="card">
+              <div class="title">Use of math models & Algorithms</div>
+              <div class="description">Saves enormous amounts of resources and allows to increase profits. With models and algorithms, you won't have to limit yourself when thinking of the future capabilities of your systems</div>
+            </div>
+          </div>
+
+          <div class="card-list">
+            <div class="card">
+              <div class="title">Software architecture design</div>
+              <div class="description">A well-designed architecture significantly increases product quality and safety, as well as its growth potential. All while minimizing maintenance costs</div>
+            </div>
+            <div class="card">
+              <div class="title">Server infrastructure design</div>
+              <div class="description">Properly designed server infrastructure will allow your product to have the maximum performance and resiliency</div>
+            </div>
+
+            <div class="card">
+              <div class="title">Functional & Automated QA</div>
+              <div class="description">A well-configured combination of functional and automated testing allows for 10X reduction in time for both preparing new releases and checking over the state of your environment</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="section" id="section3">
+      <div class="container">
+        <div class="main-title">
+          Product
+        </div>
+
+        <main class="flex">
+          <div class="card-list">
+            <div class="card">
+              <div class="title">Digital product development</div>
+              <div class="description">We build useful digital products (web services and mobile applications) with multi-level logical chains</div>
+            </div>
+            <div class="card">
+              <div class="title">Product management</div>
+              <div class="description">We create strategies and approaches to effectively use your basic resources - time and money - and allow you to build products your users will love</div>
+            </div>
+
+            <div class="card">
+              <div class="title">Customer development</div>
+              <div class="description">Your users can help you validate hypotheses and build solutions they actually need. We know how to talk to them to get all the right answers</div>
+            </div>
+          </div>
+
+          <div class="card-list">
+            <div class="card">
+              <div class="title">Product design factory </div>
+              <div class="description">Our design team understands not only the principles of creating high-quality UX / UI, but also the subject area to build truly easy-to-use products </div>
+            </div>
+            <div class="card">
+              <div class="title">Cross-functional communications</div>
+              <div class="description">We know how to involve all interested parties in the product development process and make it really attractive for them</div>
+            </div>
+
+            <div class="card">
+              <div class="title">Setting Metrics & KPIs</div>
+              <div class="description">Set your goals and start measuring the right things from the very beginning to clearly determine the priorities, and define the effectiveness of any actions</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
   </div>
+
+  <div class="section" id="section4">
+      <div class="as-background-wrapper">
+        <img src="assets/misha.png" class="as-background">
+      </div>
+      <div class="container">
+        <div class="main-title small right-align">
+          <span class="blue">Unique methodology</span><br/> for building efficient<br/> IT teams
+        </div>
+        <div class="coming">👋 Coming in October</div>
+        <form id="email">
+          <div class="description right-align">Leave your email to get early access</div>
+          <div class="form-wrapper flex">
+            <input required type="email" name="email" placeholder="Enter your email">
+            <button>Get it</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
 </body>
 </html>
