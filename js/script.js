@@ -100,6 +100,7 @@ function mouseWheelHandle (event) {
 	}
 
 	var direction = detectMouseWheelDirection(event)
+	var isFullPage = event.currentTarget.contains(sectionElement)
 
 	if (window.slide === 3 && direction === "down") {
 		event.stopPropagation()
@@ -125,6 +126,13 @@ function mouseWheelHandle (event) {
 			if (!slideTimeout) {
 				setLock(false)
 			}
+		}
+	}
+
+	if (isFullPage && direction === "up") {
+		sectionElement.classList.remove("show")
+		if (!slideTimeout) {
+			setLock(false)
 		}
 	}
 }
