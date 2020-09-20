@@ -8,32 +8,6 @@ if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
 
-var timeout
-var delay = 1001
-var fullpageElement = document.getElementById("fullpage")
-var sectionElement = document.getElementById("section4")
-
-function detectMouseWheelDirection( event ) {
-    var delta = null
-    var direction = false
-
-    if (!event) {
-      event = window.event;
-    }
-
-    if (event.wheelDelta) {
-      delta = event.wheelDelta / 60;
-    } else if (event.detail) {
-      delta = -e.detail / 2;
-    }
-
-    if (delta !== null) {
-      direction = delta > 0 ? 'up' : 'down';
-    }
-
-    return direction;
-}
-
 function setCoefficient () {
 	var defaultHeight = 789
 	var defaultCoefficient = 0.8
@@ -47,51 +21,112 @@ function setCoefficient () {
 	return setCoefficient
 }
 
-function mouseWheelHandle (event) {
-	var id = event.currentTarget.id
-	var direction = detectMouseWheelDirection(event)
-
-	if (window.fullpageSlide === 3 && id === "fullpage" && direction === "down") {
-		event.stopPropagation()
-		sectionElement.classList.remove("top")
-		sectionElement.classList.add("show")
-	} 
-
-	if (id === "section4" && direction === "up") {
-		event.stopPropagation()
-		sectionElement.classList.remove("show")
-	}
-}
-
 setCoefficient()
 
+function detectMouseWheelDirection( event ) {
+    var delta = null
+    var direction = false
+
+    if (!event) {
+      event = window.event;
+    }
+
+    if (event.wheelDelta) {
+      delta = event.wheelDelta / 60;
+    } else if (event.detail) {
+      delta = -event.detail / 2;
+    }
+
+    if (delta !== null) {
+      direction = delta > 0 ? 'up' : 'down';
+    }
+
+    return direction;
+}
+
+var slideTimeout
+var delay = 1001
+var sectionElement = document.getElementById("section4")
+var fullpageElement = document.getElementById("fullpage")
+var wrapper = document.querySelector(".wrapper")
+var isFirefox = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+
 if (window.innerWidth > 990) {
+	if (!isFirefox) {
+		sectionElement.classList.add("absolute", "top")
+	} else {
+		fullpageElement.appendChild(sectionElement)
+	}
+
 	var instance = new fullpage("#fullpage", {
 		licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
 		easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
 		scrollingSpeed: delay,
 		onLeave: function (section, destination, direction) {
 			if (!destination.isLast) {
+				setLock(false, destination.index)
+
 				if (direction === "down") {
 					section.item.classList.add("translate")
 				} else {
 					destination.item.classList.remove("translate")
 				}
+			} else {
+				setLock(true, destination.index)
 			}
-			
-			clearTimeout(timeout)
-			timeout = setTimeout(function () {
-				window.fullpageSlide = destination.index
-			}, delay)
 		}
 	})
 
-	sectionElement.classList.add("absolute", "top")
+	wrapper.onmousewheel = mouseWheelHandle;
+	wrapper.addEventListener('DOMMouseScroll', mouseWheelHandle);
+}
 
-	fullpageElement.onmousewheel = mouseWheelHandle;
-	fullpageElement.addEventListener('DOMMouseScroll', mouseWheelHandle)
-	sectionElement.onmousewheel = mouseWheelHandle;
-	sectionElement.addEventListener('DOMMouseScroll', mouseWheelHandle);
+function setLock (isLock, slide) {
+	clearTimeout(slideTimeout)
+	slideTimeout = setTimeout(function () {
+		window.isLock = isLock
+
+		if (slide) {
+			window.slide = slide
+		}
+
+		slideTimeout = null
+	}, delay)
+}
+
+function mouseWheelHandle (event) {
+	if (isFirefox) {
+		return
+	}
+
+	var direction = detectMouseWheelDirection(event)
+
+	if (window.slide === 3 && direction === "down") {
+		event.stopPropagation()
+		sectionElement.classList.remove("top")
+		sectionElement.classList.add("show")
+
+		if (!slideTimeout) {
+			setLock(true)
+		}
+	}
+
+	if (window.isLock) {
+		event.stopPropagation()
+
+		if (direction === "down") {
+			sectionElement.classList.remove("top")
+			sectionElement.classList.add("show")
+			if (!slideTimeout) {
+				setLock(true)
+			}
+		} else {
+			sectionElement.classList.remove("show")
+			if (!slideTimeout) {
+				setLock(false)
+			}
+		}
+	}
 }
 
 document.querySelector("#email").onsubmit = function (event) {
