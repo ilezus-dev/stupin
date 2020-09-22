@@ -154,13 +154,6 @@ quote {
   line-height: 113px;
 }
 
-div#section1 .main-title,
-div#section2 .main-title,
-div#section3 .main-title {
-  margin-top: calc(120px * var(--coefficient-2));
-  margin-bottom: calc(30px * var(--coefficient-2));;
-}
-
 .blue {
   color: #1E57D6;
 }
@@ -428,6 +421,8 @@ div#section4 .form-wrapper button {
     text-align: center;
     font-size: 80px;
     line-height: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .coming {
