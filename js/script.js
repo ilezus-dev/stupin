@@ -24,7 +24,6 @@ var instance = new fullpage("#fullpage", {
 	licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
 	easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
 	scrollingSpeed: 1000,
-	autoScrolling: true,
 	absoluteSlide: {
 		element: sectionElement,
 		position: 4
