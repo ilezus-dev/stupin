@@ -1,3 +1,5 @@
+var reloadTimeout
+
 window.onload = function () {
   setTimeout(function () {
     document.body.classList.remove("hide")
@@ -33,7 +35,10 @@ function setCoefficient () {
 
 setCoefficient()
 window.addEventListener("resize", function() {
-	window.location.reload()
+	clearTimeout(reloadTimeout)
+	reloadTimeout = setTimeout(function () {
+		window.location.reload()
+	}, 300)
 })
 
 document.querySelector("#email").onsubmit = function (event) {
