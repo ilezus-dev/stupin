@@ -8,6 +8,21 @@ if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
 
+
+var sectionElement = document.getElementById("section4")
+
+if (document.body.offsetWidth > 1024) {
+	var instance = new fullpage("#fullpage", {
+		licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
+		easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
+		scrollingSpeed: 1000,
+		absoluteSlide: {
+			element: sectionElement,
+			position: 4
+		}
+	})
+}
+
 function setCoefficient () {
 	var defaultHeight = 789
 	var defaultCoefficient = 0.8
@@ -17,18 +32,6 @@ function setCoefficient () {
 
 	root.style.setProperty("--coefficient", normalizedCoefficient)
 	root.style.setProperty("--coefficient-2", normalizedCoefficient - 0.3)
-}
-
-if (document.body.offsetWidth > 1024) {
-	var instance = new fullpage("#fullpage", {
-		licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
-		easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
-		scrollingSpeed: 1000,
-		absoluteSlide: {
-			element: document.getElementById("section4"),
-			position: 4
-		}
-	})
 }
 
 setCoefficient()
