@@ -498,14 +498,15 @@
         /**
          * When resizing is finished, we adjust the slides sizes and positions
          */
-        function reBuild(resizing){
+        function reBuild(resizing, sizes){
             if(hasClass(container, DESTROYED)){ return; }  //nothing to do if the plugin was destroyed
 
             isResizing = true;
+            console.log("sss", sizes)
 
             //updating global vars
-            windowsHeight = getWindowHeight();
-            windowsWidth = getWindowWidth();
+            windowsHeight = sizes ? sizes.height : getWindowHeight();
+            windowsWidth = sizes ? sizes.width : getWindowWidth();
 
             var sections = $(SECTION_SEL);
             for (var i = 0; i < sections.length; ++i) {
