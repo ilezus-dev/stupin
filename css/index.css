@@ -408,6 +408,10 @@ div#section4 .form-wrapper button {
     padding-bottom: 0;
   }
 
+  .section:first-child .container {
+    padding-bottom: 30px;
+  }
+
   .background, .as-background {
     display: none;
   }
