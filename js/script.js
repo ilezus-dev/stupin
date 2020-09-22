@@ -32,7 +32,9 @@ function setCoefficient () {
 }
 
 setCoefficient()
-window.addEventListener("resize", window.location.reload)
+window.addEventListener("resize", function() {
+	window.location.reload()
+})
 
 document.querySelector("#email").onsubmit = function (event) {
 	event.preventDefault()
