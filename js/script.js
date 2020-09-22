@@ -19,16 +19,17 @@ function setCoefficient () {
 	root.style.setProperty("--coefficient-2", normalizedCoefficient - 0.3)
 }
 
-var sectionElement = document.getElementById("section4")
-var instance = new fullpage("#fullpage", {
-	licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
-	easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
-	scrollingSpeed: 1000,
-	absoluteSlide: {
-		element: sectionElement,
-		position: 4
-	}
-})
+if (document.body.offsetWidth > 1024) {
+	var instance = new fullpage("#fullpage", {
+		licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
+		easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
+		scrollingSpeed: 1000,
+		absoluteSlide: {
+			element: document.getElementById("section4"),
+			position: 4
+		}
+	})
+}
 
 setCoefficient()
 window.addEventListener("resize", function (event) {
