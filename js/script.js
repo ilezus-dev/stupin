@@ -35,9 +35,6 @@ setCoefficient()
 window.addEventListener("resize", function (event) {
 	setCoefficient()
 
-	var width = document.body.offsetWidth
-	var height = document.body.offsetHeight
-
 	if (document.body.offsetWidth > 1024) {
 		window.location.reload()
 	} else {
