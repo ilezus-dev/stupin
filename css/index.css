@@ -405,6 +405,7 @@ div#section4 .form-wrapper button {
 @media only screen and (max-width: 1024px) {
   .container {
     padding: 30px;
+    padding-bottom: 0;
   }
 
   .background, .as-background {
@@ -429,6 +430,7 @@ div#section4 .form-wrapper button {
     border-top-right-radius: 50px;
     margin-right: auto;
     margin-bottom: 80px;
+    margin-top: 20px;
   }
 
 
