@@ -8,16 +8,13 @@ if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
 
-
-var sectionElement = document.getElementById("section4")
-
 if (document.body.offsetWidth > 1024) {
 	var instance = new fullpage("#fullpage", {
 		licenseKey: "B6BC1205-0D4C4A40-B4ECE2E7-85523C97",
 		easingcss3: "cubic-bezier(0.76, 0, 0.24, 1)",
 		scrollingSpeed: 1000,
 		absoluteSlide: {
-			element: sectionElement,
+			element: document.getElementById("section4"),
 			position: 4
 		}
 	})
@@ -35,16 +32,7 @@ function setCoefficient () {
 }
 
 setCoefficient()
-window.addEventListener("resize", function (event) {
-	setCoefficient()
-
-	if (document.body.offsetWidth > 1024) {
-		window.location.reload()
-	} else {
-		sectionElement.classList.remove("absolute", "bottom")
-		instance.destroy(true)
-	}
-})
+window.addEventListener("resize", window.location.reload)
 
 document.querySelector("#email").onsubmit = function (event) {
 	event.preventDefault()
