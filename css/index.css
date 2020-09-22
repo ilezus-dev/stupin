@@ -146,7 +146,8 @@ quote {
   color: white;
   font-weight: bold;
   margin-top: calc(120px * var(--coefficient));
-  margin-bottom: calc(30px * var(--coefficient));;
+  margin-bottom: calc(30px * var(--coefficient));
+  word-break: break-word;
 }
 
 .main-title.small {
