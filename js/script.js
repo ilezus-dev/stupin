@@ -48,9 +48,15 @@ document.querySelector("#email").onsubmit = function (event) {
 	event.preventDefault()
 
 	var xhr = new XMLHttpRequest();
+	var params = "email=" + document.querySelector("input[type=email]").value
 	xhr.onreadystatechange = function() {};
 	xhr.open('POST', '/mail.php');
-	xhr.send("email=" + document.querySelector("input[type=email]").value)
+
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+	xhr.setRequestHeader("Content-length", params.length)
+	xhr.setRequestHeader("Connection", "close")
+
+	xhr.send(params)
 	
 	document.querySelector("#email .description").textContent = "Thank you!"
 	document.querySelector("input[type=email]").value = ""
